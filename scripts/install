@@ -1,0 +1,3 @@
+cd ..
+programname=$(eval "basename $(pwd)")
+cp "ReleaseBuild/$programname" /usr/bin

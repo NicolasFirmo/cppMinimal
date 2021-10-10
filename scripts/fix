@@ -1,0 +1,8 @@
+echo "pragma-ing those headers!"
+python3 pragma_those_headers.py
+echo
+cd ..
+run-clang-tidy-12.py -header-filter=".*" -p DebugBuild ./src/**/*.cpp ./src/**/*.h ./src/**/*.hpp -quiet -fix -j4
+echo
+echo "running clang-format-12 on all source files"
+clang-format-12 -style=file -i ./src/**/*.h ./src/**/*.hpp ./src/**/*.cpp
